@@ -1,28 +1,30 @@
-// src/components/SearchBar.tsx
 import React, { useState } from 'react';
-// import './index.css'
 
 interface Props {
+  // Callback function to send the search query to the parent component
   onSearch: (query: string) => void;
 }
 
 const SearchBar: React.FC<Props> = ({ onSearch }) => {
+  // Local state to hold the current input value
   const [input, setInput] = useState('');
+
+  // Handle form submission
   const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSearch(input.trim());
+    e.preventDefault();               // Prevent default form behavior (page reload)
+    onSearch(input.trim());           // Call parent search handler with trimmed input
   };
 
   return (
-    <form onSubmit={submit} className="flex mb-4">
+    <form onSubmit={submit} className="search-form">
       <input
         type="text"
-        className="flex-grow border px-2 py-1"
+        className="search-input"
         placeholder="Search repos…"
         value={input}
-        onChange={e => setInput(e.target.value)}
+        onChange={e => setInput(e.target.value)} // Update input state on every keystroke
       />
-      <button type="submit" className="ml-2 px-4 py-1 bg-blue-500 text-white rounded">
+      <button type="submit" className="search-button">
         Search
       </button>
     </form>

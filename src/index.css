@@ -1,12 +1,36 @@
-/* src/index.css */
+/* =======================
+   Theme Variables
+   ======================= */
+:root {
+  --bg-color: #ffffff;           /* Light background */
+  --text-color: #222;            /* Primary text */
+  --accent-color: #6c5ce7;       /* Highlight color (purple) */
+  --button-bg: #0984e3;          /* Main button color (blue) */
+  --input-bg: #f5f5f5;           /* Input background (light gray for visibility) */
+  --border-color: #ccc;          /* Standard light border */
+  --table-hover: #f3f3f3;        /* Row hover background (light) */
+}
 
-body {
+body.dark-mode {
+  --bg-color: #1e1e2f;           /* Dark background */
+  --text-color: #f0f0f0;         /* Light text for dark mode */
+  --accent-color: #a29bfe;       /* Lighter purple for dark mode */
+  --button-bg: #00a8ff;          /* Bright blue for contrast */
+  --input-bg: #2e2e3e;           /* Darker input field */
+  --border-color: #555;          /* Softer dark borders */
+  --table-hover: #2a2a3b;        /* Dark hover color */
+}
+
+/* =======================
+   Global Layout
+   ======================= */
+body, html, #root {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-               'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-               'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* App Centering */
@@ -139,15 +163,10 @@ body {
 .table-wrapper th {
   background-color: #f1f2f6;
   font-weight: bold;
-  color: black; 
+  color: black; /* ✅ Always black in light mode */
 }
 
 /* Dark mode override */
-body.dark-mode .table-wrapper th {
-  color: var(--text-color); /* white/light gray in dark */
-  background-color: #2a2a3b; /* optional: match dark table rows */
-}
-
 body.dark-mode .table-wrapper th {
   color: var(--text-color); /* white/light gray in dark */
   background-color: #2a2a3b; /* optional: match dark table rows */

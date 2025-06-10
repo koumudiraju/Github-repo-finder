@@ -1,25 +1,25 @@
-// src/components/Pagination.tsx
 import React from 'react';
 
 interface Props {
-  page: number;
-  onPrev: () => void;
-  onNext: () => void;
+  page: number;       // Current page number
+  onPrev: () => void; // Handler for clicking "Prev"
+  onNext: () => void; // Handler for clicking "Next"
 }
 
 const Pagination: React.FC<Props> = ({ page, onPrev, onNext }) => (
-  <div className="flex justify-center my-4">
-    <button 
-      onClick={onPrev} 
-      disabled={page === 1} 
-      className="px-3 py-1 border rounded disabled:opacity-50"
-    >
+  <div className="pagination">
+    {/* Prev button disabled on first page */}
+    <button onClick={onPrev} disabled={page === 1}>
       Prev
     </button>
-    <span className="px-4">Page {page}</span>
-    <button onClick={onNext} className="px-3 py-1 border rounded">
-      Next
-    </button>
+
+    {/* Current page number */}
+    <span style={{ padding: '0.5rem 1rem', fontWeight: 'bold' }}>
+      Page {page}
+    </span>
+
+    {/* Next button */}
+    <button onClick={onNext}>Next</button>
   </div>
 );
 
