@@ -70,8 +70,11 @@
 
 ```bash
 git clone https://github.com/koumudiraju/Github-repo-finder.git
+```bash
 cd Github-repo-finder
+```bash
 npm install
+```bash
 npm start
 
 ### How to Deploy
