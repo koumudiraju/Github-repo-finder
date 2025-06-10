@@ -9,7 +9,206 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-               monospace;
+/* App Centering */
+.app-container {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.app-box {
+  background-color: var(--bg-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* soft shadow */
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+}
+
+/* =======================
+   Header & Title
+   ======================= */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+}
+
+/* =======================
+   Search Form
+   ======================= */
+.search-form {
+  display: flex;
+  margin-bottom: 1.25rem;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2); /* glow border on focus */
+}
+
+.search-button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.search-button:hover {
+  opacity: 0.9;
+}
+
+/* =======================
+   Sorting Button
+   ======================= */
+.sort-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.sort-button {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sort-button:hover {
+  opacity: 0.9;
+}
+
+/* =======================
+   Feedback & Hint Text
+   ======================= */
+.loading-text,
+.hint-text {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+/* =======================
+   Table for Repo List
+   ======================= */
+.table-hint {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Default (light mode) */
+.table-wrapper th {
+  background-color: #f1f2f6;
+  font-weight: bold;
+  color: black; 
+}
+
+/* Dark mode override */
+body.dark-mode .table-wrapper th {
+  color: var(--text-color); /* white/light gray in dark */
+  background-color: #2a2a3b; /* optional: match dark table rows */
+}
+
+body.dark-mode .table-wrapper th {
+  color: var(--text-color); /* white/light gray in dark */
+  background-color: #2a2a3b; /* optional: match dark table rows */
+}
+
+
+.table-wrapper tr:hover {
+  background-color: var(--table-hover);
+  cursor: pointer;
+}
+
+/* =======================
+   Pagination
+   ======================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.pagination button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #74b9ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =======================
+   Loading Skeleton (Progress Bar)
+   ======================= */
+.loading-bar-container {
+  width: 100%;
+  height: 6px;
+  background-color: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.loading-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #6c5ce7;
+  animation: fillBar 1.5s ease-in-out forwards;
+  border-radius: 3px;
+}
+
+@keyframes fillBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
