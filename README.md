@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+# 🚀 GitHub Repo Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🔗 Live Demo & Repository
 
-## Available Scripts
+- 🌍 **Live App**: ([https://github-repo-finder-koumudiraju.vercel.app/](https://github-repo-finder-9irv.vercel.app/))
+- 💻 **GitHub Repository**: ([https://github.com/koumudiraju/Github-repo-finder](https://github.com/koumudiraju/Github-repo-finder))
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 🔍 Search Repositories
+- Search GitHub repositories by keyword using the GitHub REST API.
+- Uses a **custom `useDebounce()` hook** to prevent excess API calls on every keystroke.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 🔃 Pagination
+- Navigate through results 10 at a time using **Previous** and **Next** buttons.
+- API query uses `?per_page=10&page=n`.
 
-### `npm test`
+### ⭐ Sort by Stars
+- Toggle sorting order (ascending/descending) based on star count.
+- Sorting is **client-side** and instant.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🌓 Dark Mode Support
+- Switch between light and dark themes.
+- Implemented using CSS variables and `document.body.classList`.
 
-### `npm run build`
+### 📄 Modal View for Repo Details
+- Click any repository row to see:
+  - Name
+  - Description
+  - Stars
+  - GitHub link
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ⏳ Loading Feedback
+- A **top progress bar** animates when fetching.
+- **Shimmering skeletons** maintain layout integrity while data loads.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🧠 User-Friendly UX Messages
+- **Before Search**:  
+  _“🔍 Start by typing a repository name above to search GitHub.”_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **While Loading**:  
+  Animated loading bar and skeletons are shown.
 
-### `npm run eject`
+- **No Results Found**:  
+  _“No repositories found.”_
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **When Results Load**:  
+  _“Click on a row to see more details.”_
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🛠️ Tech Stack
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+| Tool        | Usage                         |
+|-------------|-------------------------------|
+| React       | Component-based UI            |
+| TypeScript  | Static typing, maintainability|
+| Axios       | HTTP requests to GitHub API   |
+| CSS Modules | Custom theming & dark mode    |
 
-## Learn More
+> ⚠️ Tailwind was originally intended, but not compiling properly on the system — so this project uses **vanilla CSS with dark mode variables**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## How to Run Locally
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/koumudiraju/Github-repo-finder.git
+cd Github-repo-finder
+npm install
+npm start
+
+### How to Deploy
+Go to vercel.com
+
+Import GitHub repo
+
+Set build command as: npm run build
+
+Output directory: build
+
+Deploy!
+
